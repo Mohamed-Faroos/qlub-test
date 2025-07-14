@@ -6,7 +6,8 @@
  */
 
 import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, useColorScheme, View, Image } from 'react-native';
+import { DirectionIcon } from './src/assets/icons';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -14,8 +15,9 @@ function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View>
-        <Text>Mohamed</Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: 100 }}>
+        <DirectionIcon />
+        {/* <Image source={{ uri: DirectionIcon }} style={{ width: 50, height: 50 }} /> */}
       </View>
       <NewAppScreen templateFileName="App.tsx" />
     </View>

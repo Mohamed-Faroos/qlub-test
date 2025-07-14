@@ -1,5 +1,22 @@
 # ninja log v5
-1	15	0	/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/armeabi-v7a/CMakeFiles/cmake.verify_globs	946aa3e760bf4b80
-0	2107	1752497847846588520	CMakeFiles/appmodules.dir/Users/admin/Documents/Test/qlub-test/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	29629e478dae02aa
 0	2250	1752497847992910465	CMakeFiles/appmodules.dir/OnLoad.cpp.o	fd91544a0cf02cbd
+0	2107	1752497847846588520	CMakeFiles/appmodules.dir/Users/admin/Documents/Test/qlub-test/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	29629e478dae02aa
 2250	2385	1752497848131714797	/Users/admin/Documents/Test/qlub-test/android/app/build/intermediates/cxx/Debug/5h4w1j6n/obj/armeabi-v7a/libappmodules.so	3421f768ed6a8d23
+1	35	0	/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/armeabi-v7a/CMakeFiles/cmake.verify_globs	946aa3e760bf4b80
+35	315	1752520397043817067	build.ninja	f8b7b8074a1c48a3
+1	13	0	/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/armeabi-v7a/CMakeFiles/cmake.verify_globs	946aa3e760bf4b80
+5	4014	1752520401062990344	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGImageState.cpp.o	d037ec5667302bb3
+8	4264	1752520401313904963	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/build/generated/source/codegen/jni/react/renderer/components/rnsvg/EventEmitters.cpp.o	96d8dbda47072fe9
+5	6094	1752520403121898190	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp.o	c4989a2e8c815bb6
+5	6961	1752520404017279717	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGShadowNodes.cpp.o	fe1aa3033176958d
+4	7009	1752520404061315807	CMakeFiles/appmodules.dir/OnLoad.cpp.o	2e87be876d179501
+5	7564	1752520404599980867	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/common/cpp/react/renderer/components/rnsvg/RNSVGImageShadowNode.cpp.o	4de5bf4e6ab75f89
+4265	7586	1752520404645310861	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/build/generated/source/codegen/jni/react/renderer/components/rnsvg/States.cpp.o	2d011c93b1f317f9
+6	7635	1752520404692747753	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/rnsvg.cpp.o	bbc1ebcca1870c83
+7	8005	1752520405048816599	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/build/generated/source/codegen/jni/react/renderer/components/rnsvg/ComponentDescriptors.cpp.o	87fbea6a8438bc6d
+4015	8113	1752520405175696250	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/build/generated/source/codegen/jni/react/renderer/components/rnsvg/ShadowNodes.cpp.o	7addfbb0813b151a
+8	8171	1752520405205177558	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/build/generated/source/codegen/jni/react/renderer/components/rnsvg/Props.cpp.o	89fd110817614ed
+6096	8241	1752520405301777158	rnsvg_autolinked_build/CMakeFiles/react_codegen_rnsvg.dir/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/build/generated/source/codegen/jni/react/renderer/components/rnsvg/rnsvgJSI-generated.cpp.o	2d68a60c4c233a6e
+8241	8933	1752520405983386261	/Users/admin/Documents/Test/qlub-test/android/app/build/intermediates/cxx/Debug/5h4w1j6n/obj/armeabi-v7a/libreact_codegen_rnsvg.so	d075f91b8ab2afff
+4	9518	1752520406529273838	CMakeFiles/appmodules.dir/Users/admin/Documents/Test/qlub-test/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	2ee1b3ede2646c19
+9518	9574	1752520406633512075	/Users/admin/Documents/Test/qlub-test/android/app/build/intermediates/cxx/Debug/5h4w1j6n/obj/armeabi-v7a/libappmodules.so	caca7da2a0ba2e1f

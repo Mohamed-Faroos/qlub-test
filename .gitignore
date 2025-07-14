@@ -139,3 +139,38 @@ build
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/.idea/
+android/local.properties
+android/.cxx/
+android/.settings/
+android/.externalNativeBuild/
+
+# Android Studio
+*.iml
+.idea/
+.gradle/
+*.keystore
+
+# iOS
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/.xcworkspace/
+ios/*.xcworkspace
+ios/*.xcodeproj/project.xcworkspace/
+ios/*.xcodeproj/xcuserdata/
+ios/*.xcodeproj/project.xcuserdatad/
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xcuserstate
+

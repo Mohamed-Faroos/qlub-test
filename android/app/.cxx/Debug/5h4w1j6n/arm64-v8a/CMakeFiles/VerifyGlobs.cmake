@@ -12,6 +12,44 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/arm64-v8a/CMakeFiles/cmake.verify_globs")
 endif()
 
+# rnsvg_SRCS at /Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt:25 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/*.cpp")
+set(OLD_GLOB
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/rnsvg.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# rnsvg_SRCS at /Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt:25 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/*.cpp")
+set(OLD_GLOB
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGImageShadowNode.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGImageState.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGLayoutableShadowNode.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../../common/cpp/react/renderer/components/rnsvg/RNSVGShadowNodes.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
+# rnsvg_codegen_SRCS at /Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt:26 (file)
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/*cpp")
+set(OLD_GLOB
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/ComponentDescriptors.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/EventEmitters.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/Props.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/ShadowNodes.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/States.cpp"
+  "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/../../../build/generated/source/codegen/jni/react/renderer/components/rnsvg/rnsvgJSI-generated.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/arm64-v8a/CMakeFiles/cmake.verify_globs")
+endif()
+
 # override_cpp_SRC at /Users/admin/Documents/Test/qlub-test/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake:50 (file)
 # input_SRC at /Users/admin/Documents/Test/qlub-test/node_modules/react-native/ReactAndroid/cmake-utils/ReactNative-application.cmake:55 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "/Users/admin/Documents/Test/qlub-test/node_modules/react-native/ReactAndroid/cmake-utils/default-app-setup/*.cpp")
