@@ -1,0 +1,4 @@
+/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir
+/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/x86/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir

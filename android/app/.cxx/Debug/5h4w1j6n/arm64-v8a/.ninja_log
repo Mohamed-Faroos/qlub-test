@@ -1,0 +1,5 @@
+# ninja log v5
+1	127	0	/Users/admin/Documents/Test/qlub-test/android/app/.cxx/Debug/5h4w1j6n/arm64-v8a/CMakeFiles/cmake.verify_globs	8214b6f1fc2aadfe
+0	2670	1752497843111181862	CMakeFiles/appmodules.dir/Users/admin/Documents/Test/qlub-test/android/app/build/generated/autolinking/src/main/jni/autolinking.cpp.o	e6e0b96d28f2938f
+0	2914	1752497843359571027	CMakeFiles/appmodules.dir/OnLoad.cpp.o	15f8836289d47ad4
+2914	3050	1752497843499136486	/Users/admin/Documents/Test/qlub-test/android/app/build/intermediates/cxx/Debug/5h4w1j6n/obj/arm64-v8a/libappmodules.so	ac9feae804750bee
