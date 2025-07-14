@@ -147,6 +147,7 @@ android/build/
 android/.idea/
 android/local.properties
 android/.cxx/
+android/app/.cxx/
 android/.settings/
 android/.externalNativeBuild/
 
