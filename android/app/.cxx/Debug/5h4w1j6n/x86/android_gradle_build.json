@@ -1,5 +1,7 @@
 {
   "buildFiles": [
+    "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/CMakeLists.txt",
+    "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-reanimated/android/build/generated/source/codegen/jni/CMakeLists.txt",
     "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-safe-area-context/android/src/main/jni/CMakeLists.txt",
     "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-screens/android/src/main/jni/CMakeLists.txt",
     "/Users/admin/Documents/Test/qlub-test/node_modules/react-native-svg/android/src/main/jni/CMakeLists.txt",
@@ -33,6 +35,16 @@
         "/Users/admin/.gradle/caches/8.14.1/transforms/1d221509c521a46e74f6572064742339/transformed/react-android-0.80.1-debug/prefab/modules/jsi/libs/android.x86/libjsi.so",
         "/Users/admin/.gradle/caches/8.14.1/transforms/1d221509c521a46e74f6572064742339/transformed/react-android-0.80.1-debug/prefab/modules/reactnative/libs/android.x86/libreactnative.so"
       ]
+    },
+    "react_codegen_rngesturehandler_codegen::@39f233abcd2c728bc6ec": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "react_codegen_rngesturehandler_codegen"
+    },
+    "react_codegen_rnreanimated::@8afabad14bfffa3f8b9a": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "react_codegen_rnreanimated"
     },
     "react_codegen_rnscreens::@25bcbd507e98d3a854ad": {
       "toolchain": "toolchain",

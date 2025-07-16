@@ -1,13 +1,25 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
+
 import HomeScreen from '../screens/Home';
 import ExploreScreen from '../screens/Explore';
 
-const Stack = createNativeStackNavigator();
+/* Types */
+export type RootStackParamList = {
+    Home: undefined;
+    Explore: undefined;
+};
 
-const RootNavigation = () => (
+export type RootNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+
+/* creating stack navigation */
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+/* Root Navigation Component */
+export const RootNavigation = () => (
     <Stack.Navigator
         screenOptions={{
-            headerShown: true,
+            headerShown: false,
         }}
         initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -15,4 +27,4 @@ const RootNavigation = () => (
     </Stack.Navigator>
 );
 
-export default RootNavigation;
+export const useRootNavigation = () => useNavigation<RootNavigationProp>();
