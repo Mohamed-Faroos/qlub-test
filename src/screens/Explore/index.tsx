@@ -1,4 +1,4 @@
-import { Platform, ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Keyboard, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import Header from '../../components/Header';
@@ -8,44 +8,46 @@ import BottomSheetModal from '../../components/BottomSheetModal/Index';
 import { FilterIcon } from '../../assets/icons';
 import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 import { restaurantFilter } from '../../constants/filter';
+import Map from '../../components/Map';
 
 const ExploreScreen = () => {
 
     const renderFilters = () => {
         return restaurantFilter.map((filter, index) => (
-            <FilterChip key={index} title={filter.title} icon={filter.icon}/>
+            <FilterChip key={index} title={filter.title} icon={filter.icon} />
         ));
     };
 
     return (
-        <SafeAreaView style={styles.container} edges={['top']}>
-            {/* Header Component */}
-            <Header />
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <SafeAreaView style={styles.container} edges={['top']}>
+                {/* Header Component */}
+                <Header />
+                {/* Search and filter components */}
+                <View style={styles.searchContainer} >
+                    <SearchInput />
 
-            {/* Search and filter components */}
-            <View style={styles.searchContainer} >
-                <SearchInput />
+                    <ScrollView
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.filterContainer}
+                    >
+                        {/* filter button */}
+                        <TouchableOpacity style={styles.filterIconButton}>
+                            <FilterIcon width={18} height={18} />
+                        </TouchableOpacity>
 
-                <ScrollView
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.filterContainer}
-                >
-                    {/* filter button */}
-                    <TouchableOpacity style={styles.filterIconButton}>
-                        <FilterIcon width={18} height={18} />
-                    </TouchableOpacity>
+                        {/* render filter chips */}
+                        {renderFilters()}
+                    </ScrollView>
+                </View>
+                <Map />
+                {/* bottom shadow to android UI */}
+                {Platform.OS === 'android' && <View style={styles.androidShadow} />}
 
-                    {/* render filter chips */}
-                    {renderFilters()}
-                </ScrollView>
-            </View>
-
-            {/* bottom shadow to android UI */}
-            {Platform.OS === 'android' && <View style={styles.androidShadow} />}
-            
-            <BottomSheetModal />
-        </SafeAreaView>
+                <BottomSheetModal />
+            </SafeAreaView>
+        </TouchableWithoutFeedback>
     );
 };
 

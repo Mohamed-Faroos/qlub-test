@@ -5,11 +5,14 @@ import { SearchIcon } from '../../assets/icons';
 const SearchInput = () => {
     return (
         <View style={styles.inputContainer}>
-            <TextInput
-                placeholder="Search for the Location You Want to Get Offer"
-                style={styles.input}
-            />
-            <SearchIcon width={18} height={18} style={styles.inputIcon} />
+                <TextInput
+                    placeholder="Search for the Location You Want to Get Offer"
+                    style={styles.input}
+                    keyboardType='default'
+                    returnKeyType='search'
+                    returnKeyLabel='Search'
+                />
+                <SearchIcon width={18} height={18} style={styles.inputIcon} />
         </View>
     );
 };

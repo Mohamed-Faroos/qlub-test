@@ -161,6 +161,7 @@ android/.externalNativeBuild/
 ios/Pods/
 ios/build/
 ios/DerivedData/
+ios/tmp.xcconfig
 ios/.xcworkspace/
 ios/*.xcworkspace
 ios/*.xcodeproj/project.xcworkspace/
