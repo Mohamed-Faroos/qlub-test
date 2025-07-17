@@ -1,6 +1,11 @@
+/* React core and React Native components */
 import React, { useCallback, useRef, useMemo } from 'react';
-import { StyleSheet, Text, Button } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+
+/* Third party libraries */
 import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+
+/* Constants and configuration */
 import { WHITE_COLOR } from '../../constants/colors';
 
 const BottomSheetModal = () => {

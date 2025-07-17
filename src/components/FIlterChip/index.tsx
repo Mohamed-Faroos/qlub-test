@@ -1,6 +1,11 @@
+/* React core and React Native components */
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
+
+/* Third-Party libraries */
 import { SvgProps } from 'react-native-svg';
+
+/* Constants and configs */
+import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
 type FilterChipProps = {
     title?: string;
@@ -11,7 +16,7 @@ const FilterChip = ({ ...props }: FilterChipProps) => {
     const IconComponent = props.icon;
     return (
         <TouchableOpacity style={styles.chipContainer}>
-            <IconComponent width={15} height={15} fill={'transparent'}/>
+            <IconComponent width={15} height={15} />
             <Text style={styles.chipText}>{props.title}</Text>
         </TouchableOpacity>
     );

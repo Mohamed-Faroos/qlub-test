@@ -10,6 +10,8 @@ import ChefHatIconSvg from './chef-hat-icon.svg';
 import CoffeeIconSvg from './coffee-icon.svg';
 import ForkIconSvg from './fork-icon.svg';
 import GlassIconSvg from './glass-icon.svg';
+import CurrentLocationIconSvg from './current-location-icon.svg';
+import PlaceMarkerIconSvg from './place-marker-icon.svg';
 
 export const DirectionIcon = CreateIcon(DirectionSvg);
 export const BackIcon = CreateIcon(BackIconSvg);
@@ -20,3 +22,5 @@ export const ChefHatIcon = CreateIcon(ChefHatIconSvg);
 export const CoffeeIcon = CreateIcon(CoffeeIconSvg);
 export const ForkIcon = CreateIcon(ForkIconSvg);
 export const GlassIcon = CreateIcon(GlassIconSvg);
+export const CurrentLocationIcon = CreateIcon(CurrentLocationIconSvg);
+export const PlaceMarkerIcon = CreateIcon(PlaceMarkerIconSvg);

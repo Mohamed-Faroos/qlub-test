@@ -1,6 +1,10 @@
+/* React core and React Native components */
 import { StyleSheet, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+
+/* Third party libraries */
 import { PRIMARY_COLOR } from '../../constants/colors';
 
+/* Button pops */
 interface ButtonProps extends TouchableOpacityProps {
     title: string;
     onPress(): void;

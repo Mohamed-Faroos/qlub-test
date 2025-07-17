@@ -1,6 +1,13 @@
+/* React core and React Native components */
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { DARK_COLOR, GREY_COLOR, LIGHT_COLOR, WHITE_COLOR } from '../../constants/colors';
+
+/* Custom UI components */
 import { BackIcon, LocationMarkerIcon } from '../../assets/icons';
+
+/* Constants and configs */
+import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
+
+/* Custom Hooks */
 import { useRootNavigation } from '../../navigation';
 
 const Header = () => {
@@ -14,12 +21,16 @@ const Header = () => {
     return (
         <View style={styles.header}>
             <StatusBar barStyle="dark-content" />
+
+            {/* back button */}
             <TouchableOpacity style={styles.iconButton} onPress={handleBackPress}>
                 <BackIcon width={20} height={20} />
             </TouchableOpacity>
+
+            {/* location details */}
             <View style={styles.locationContainer}>
                 <View style={styles.iconContainer}>
-                    <LocationMarkerIcon width={20} height={20} fill={'transparent'} />
+                    <LocationMarkerIcon width={20} height={20} />
                 </View>
                 <View style={styles.locationTextContainer}>
                     <Text style={styles.locationTextTitle}>Offers Near</Text>

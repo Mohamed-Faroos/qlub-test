@@ -1,6 +1,8 @@
+/* Third-party libraries */
 import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
+/* Screens UI */
 import HomeScreen from '../screens/Home';
 import ExploreScreen from '../screens/Explore';
 

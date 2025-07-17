@@ -1,17 +1,34 @@
-import { Keyboard, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+/* React core and React Native components */
+import {
+    Keyboard,
+    Platform,
+    ScrollView,
+    StyleSheet,
+    TouchableOpacity,
+    TouchableWithoutFeedback,
+    View
+} from 'react-native';
+
+/* Third-party libraries */
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+/* Custom UI components */
 import Header from '../../components/Header';
 import SearchInput from '../../components/SearchInput';
 import FilterChip from '../../components/FIlterChip';
+import Map from '../../components/Map';
 import BottomSheetModal from '../../components/BottomSheetModal/Index';
 import { FilterIcon } from '../../assets/icons';
+
+/* Constants and Configs */
 import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 import { restaurantFilter } from '../../constants/filter';
-import Map from '../../components/Map';
 
 const ExploreScreen = () => {
-
+    /**
+     *  maps over an array of `restaurantFilter` objects to render
+     * `FilterChip` components with titles and icons.
+     */
     const renderFilters = () => {
         return restaurantFilter.map((filter, index) => (
             <FilterChip key={index} title={filter.title} icon={filter.icon} />
@@ -27,6 +44,7 @@ const ExploreScreen = () => {
                 <View style={styles.searchContainer} >
                     <SearchInput />
 
+                    {/* Filters vertical list */}
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -41,10 +59,14 @@ const ExploreScreen = () => {
                         {renderFilters()}
                     </ScrollView>
                 </View>
+
+                {/* Map for locate restaurants */}
                 <Map />
+
                 {/* bottom shadow to android UI */}
                 {Platform.OS === 'android' && <View style={styles.androidShadow} />}
 
+                {/* list of restaurant's cards */}
                 <BottomSheetModal />
             </SafeAreaView>
         </TouchableWithoutFeedback>

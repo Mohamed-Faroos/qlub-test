@@ -1,5 +1,7 @@
 import { View } from 'react-native';
-import MapView, { MapStyleElement, Marker } from 'react-native-maps';
+import MapView, { MapStyleElement } from 'react-native-maps';
+import CurrentLocationMarker from '../CurrentLocationMarker';
+import PlaceMarker from '../PlaceMarker';
 
 const Map = () => {
 
@@ -24,7 +26,6 @@ const Map = () => {
             elementType: 'geometry',
             stylers: [{ visibility: 'off' }],
         },
-        // Hide everything else (POIs, buildings, parks, water, etc.)
         {
             featureType: 'poi',
             elementType: 'all',
@@ -47,11 +48,12 @@ const Map = () => {
         },
     ];
 
+    
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, paddingBottom: 100 }}>
             <MapView
-                style={{ flex: 1, paddingBottom: 200 }}
+                style={{ flex: 1 }}
                 provider='google'
                 mapType='standard'
                 customMapStyle={mapStyle}
@@ -66,7 +68,8 @@ const Map = () => {
                     longitudeDelta: 0.2,
                 }}
             >
-                <Marker coordinate={{ latitude: 6.747790274300732, longitude: 79.89973831760824 }} />
+                <CurrentLocationMarker />
+                <PlaceMarker/>
             </MapView>
         </View>
     );

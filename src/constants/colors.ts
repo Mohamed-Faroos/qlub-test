@@ -1,3 +1,4 @@
+// ─── Global Color Palette ────────────────────────────────
 export const PRIMARY_COLOR = 'rgba(110, 19, 200, 1)';
 export const LIGHT_COLOR = 'rgba(248, 245, 245, 1)';
 export const WHITE_COLOR = 'rgba(255, 255, 255, 1)';
