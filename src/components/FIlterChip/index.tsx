@@ -8,7 +8,7 @@ import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 // Props and Types
 import { FilterChipProps } from '../../types';
 
-const FilterChip: React.FC<FilterChipProps> = ({ ...props }) => {
+const FilterChip: React.FC<FilterChipProps> = (props) => {
     const IconComponent = props.icon;
     return (
         <TouchableOpacity style={styles.chipContainer}>

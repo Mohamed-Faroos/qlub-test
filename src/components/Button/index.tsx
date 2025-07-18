@@ -12,7 +12,7 @@ import { PRIMARY_COLOR } from '../../constants/colors';
 // Props and Types
 import { ButtonProps } from '../../types';
 
-const Button: React.FC<ButtonProps> = ({ ...props }) => {
+const Button: React.FC<ButtonProps> = (props) => {
     return (
         <TouchableOpacity
             onPress={props.onPress}

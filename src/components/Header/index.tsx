@@ -14,7 +14,7 @@ import { useRootNavigation } from '../../navigation';
 // props and Types
 import { HeaderProps } from '../../types';
 
-const Header: React.FC<HeaderProps> = ({ ...props }) => {
+const Header: React.FC<HeaderProps> = (props) => {
 
     const navigation = useRootNavigation();
 

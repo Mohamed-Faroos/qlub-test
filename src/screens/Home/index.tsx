@@ -21,6 +21,7 @@ import HomeImage from '../../assets/images/home-image.svg';
 
 // Props and Types
 import { AppDispatch } from '../../store/store';
+import { useEffect } from 'react';
 
 
 

@@ -12,7 +12,7 @@ import { PRIMARY_COLOR, PRIMARY_LIGHT_COLOR } from '../../constants/colors';
 // Props and Types
 import { IconButtonProps } from '../../types';
 
-const IconButton: React.FC<IconButtonProps> = ({ ...props }) => {
+const IconButton: React.FC<IconButtonProps> = (props) => {
     const IconComponent = props.icon;
 
     return (

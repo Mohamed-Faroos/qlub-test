@@ -1,4 +1,6 @@
+import BottomSheet, { BottomSheetFlatListMethods } from '@gorhom/bottom-sheet';
 import { StyleProp, TextStyle, TouchableOpacityProps } from 'react-native';
+import MapView from 'react-native-maps';
 import { SvgProps } from 'react-native-svg';
 
 export interface ButtonProps extends TouchableOpacityProps {
@@ -42,17 +44,35 @@ export interface RestaurantsProps {
     imageUrl: string;
 }
 
-export interface MapProps  {
+export interface PlaceMarkerProps {
+    id: number,
+    restaurant: RestaurantsProps,
+    isSelected: boolean
+    onSelectLocation(index: number): void
+}
+
+export interface MapProps {
+    mapRef?: React.RefObject<MapView | null>;
     currentLocation: LocationProps;
     restaurants: RestaurantsProps[];
+    selectedLocation: number | null;
+    onSelectLocation(index: number): void
 }
 
 export interface RestaurantCarsProps {
-    restaurant: RestaurantsProps
+    id: number,
+    restaurant: RestaurantsProps,
+    selectedLocation: number | null;
+    isSelected: boolean
+    onSelectLocation(index: number): void
 }
 
 export interface RestaurantListModalProps {
-    restaurants: RestaurantsProps[]
+    listRef?: React.RefObject<BottomSheetFlatListMethods | null>;
+    modalRef?: React.RefObject<BottomSheet | null>;
+    restaurants: RestaurantsProps[],
+    selectedRestaurant: number | null;
+    onSelectRestaurant(index: number): void
 }
 
 export interface FilterType {
@@ -61,7 +81,7 @@ export interface FilterType {
     icon: React.FC<SvgProps>;
 }
 
-export interface GeoLocation  {
+export interface GeoLocation {
     latitude: number | null;
     longitude: number | null;
     address?: string | '';

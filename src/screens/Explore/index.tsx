@@ -1,5 +1,5 @@
 // React core and React Native components
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
     Keyboard,
     Platform,
@@ -14,6 +14,8 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import Config from 'react-native-config';
+import MapView from 'react-native-maps';
+import BottomSheet, { BottomSheetFlatListMethods } from '@gorhom/bottom-sheet';
 
 // Custom UI components
 import Header from '../../components/Header';
@@ -41,10 +43,15 @@ const ExploreScreen = () => {
 
     // local state
     const [currentLocation, setCurrentLocation] = useState<GeoLocation>({
-        latitude: 6.747790274300732,
-        longitude: 79.89973831760824,
-        address: 'Keselwatha, Panadura, Sri Lanka'
+        latitude: 6.8904559,
+        longitude: 79.8562609,
+        address: '88 Galle - Colombo Rd'
     });
+    const [selectedRestaurant, setSelectedRestaurant] = useState<number | null>(null);
+
+    const mapRef = useRef<MapView>(null);
+    const modalRef = useRef<BottomSheet>(null);
+    const listRef = useRef<BottomSheetFlatListMethods>(null);
 
     // hooks
     const { getCurrentLocation } = useGeoLocation();
@@ -55,7 +62,7 @@ const ExploreScreen = () => {
      * mounts for the first time. 
     */
     useEffect(() => {
-        // fetchCurrentGeoLocation();
+        fetchCurrentGeoLocation();
     }, []);
 
     /** triggering the `fetchNearByRestaurants` function whenever the 
@@ -63,7 +70,8 @@ const ExploreScreen = () => {
      */
     useEffect(() => {
         if (currentLocation.latitude && currentLocation.longitude) {
-            // fetchNearByRestaurants();
+            setSelectedRestaurant(null);
+            fetchNearByRestaurants();
         }
     }, [currentLocation]);
 
@@ -73,8 +81,6 @@ const ExploreScreen = () => {
      */
     const fetchCurrentGeoLocation = async () => {
         const { latitude, longitude, address } = await getCurrentLocation();
-        console.log({ latitude });
-
         setCurrentLocation({
             latitude,
             longitude,
@@ -96,6 +102,42 @@ const ExploreScreen = () => {
     };
 
     /**
+     * The onSelectLocation function updates the selected restaurant index and scrolls to the
+     * corresponding item in a list with a delay.
+     */
+    const onSelectLocation = (selectedIndex: number) => {
+        setSelectedRestaurant(selectedIndex);
+        if (selectedIndex !== null && selectedIndex >= 0 && listRef?.current) {
+            modalRef?.current?.snapToIndex(1);
+            setTimeout(() => {
+                if (selectedIndex !== null) {
+                    listRef?.current?.scrollToIndex({ index: selectedIndex, animated: true });
+                }
+            }, 300);
+        }
+    };
+
+    /**
+     * The onSelectRestaurant function handles selecting a restaurant, updating the selected restaurant
+     * state, and animating the map to the selected restaurant's location if available.
+     */
+    const onSelectRestaurant = (selectedIndex: number) => {
+        modalRef?.current?.snapToIndex(1);
+        setSelectedRestaurant(selectedIndex);
+        if (selectedIndex >= 0 && mapRef?.current) {
+            const selectedRestaurant = stateRestaurants.find((_: any, index: number) => index === selectedIndex);
+            if (selectedRestaurant) {
+                mapRef?.current?.animateToRegion({
+                    latitude: selectedRestaurant.latitude,
+                    longitude: selectedRestaurant.longitude,
+                    latitudeDelta: 0.009,
+                    longitudeDelta: 0.009,
+                }, 600);
+            }
+        }
+    };
+
+    /**
      *  maps over an array of `restaurantFilter` objects to render
      * `FilterChip` components with titles and icons.
      */
@@ -110,13 +152,18 @@ const ExploreScreen = () => {
     */
     const renderMapWithPlaces = () => {
         if (currentLocation?.latitude && currentLocation?.longitude) {
-            return (<Map
-                currentLocation={{
-                    latitude: currentLocation?.latitude,
-                    longitude: currentLocation?.longitude
-                }}
-                restaurants={stateRestaurants}
-            />);
+            return (
+                <Map
+                    mapRef={mapRef}
+                    currentLocation={{
+                        latitude: currentLocation?.latitude,
+                        longitude: currentLocation?.longitude
+                    }}
+                    restaurants={stateRestaurants}
+                    selectedLocation={selectedRestaurant}
+                    onSelectLocation={onSelectLocation}
+                />
+            );
         }
     };
 
@@ -154,7 +201,13 @@ const ExploreScreen = () => {
                     <View style={styles.androidShadow} />}
 
                 {/* list of restaurant's cards */}
-                <RestaurantListModal restaurants={stateRestaurants} />
+                <RestaurantListModal
+                    modalRef={modalRef}
+                    listRef={listRef}
+                    restaurants={stateRestaurants}
+                    onSelectRestaurant={onSelectRestaurant}
+                    selectedRestaurant={selectedRestaurant}
+                />
             </SafeAreaView>
         </TouchableWithoutFeedback>
     );

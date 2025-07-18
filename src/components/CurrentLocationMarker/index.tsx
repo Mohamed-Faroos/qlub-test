@@ -14,7 +14,7 @@ import { PRIMARY_COLOR, WHITE_COLOR } from '../../constants/colors';
 // Props and types
 import { CurrentLocationMarkerProps } from '../../types';
 
-const CurrentLocationMarker: React.FC<CurrentLocationMarkerProps> = ({ ...props }) => {
+const CurrentLocationMarker: React.FC<CurrentLocationMarkerProps> = (props) => {
 
     const opacityAnim = useRef(new Animated.Value(1)).current;
 

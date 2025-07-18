@@ -15,10 +15,11 @@ import { mapStyle } from '../../constants/mapStyle';
 // Props and Types
 import { MapProps, RestaurantsProps } from '../../types';
 
-const Map: React.FC<MapProps> = ({ ...props }) => {
+const Map: React.FC<MapProps> = (props) => {
     return (
         <View style={style.mapContainer}>
             <MapView
+                ref={props.mapRef}
                 style={style.map}
                 provider='google'
                 mapType='standard'
@@ -30,8 +31,8 @@ const Map: React.FC<MapProps> = ({ ...props }) => {
                 initialRegion={{
                     latitude: props.currentLocation.latitude,
                     longitude: props.currentLocation.longitude,
-                    latitudeDelta: 0.009,
-                    longitudeDelta: 0.009,
+                    latitudeDelta: 0.01,
+                    longitudeDelta: 0.02,
                 }}
             >
                 {/* Render user current location marker */}
@@ -44,7 +45,13 @@ const Map: React.FC<MapProps> = ({ ...props }) => {
                 {
                     props.restaurants
                         .map((restaurant: RestaurantsProps, index: number) => (
-                            <PlaceMarker key={index} {...restaurant} />
+                            <PlaceMarker
+                                key={index}
+                                id={index}
+                                restaurant={restaurant}
+                                isSelected={props.selectedLocation === index}
+                                onSelectLocation={props.onSelectLocation}
+                            />
                         ))
                 }
             </MapView>
@@ -55,7 +62,7 @@ const Map: React.FC<MapProps> = ({ ...props }) => {
 const style = StyleSheet.create({
     mapContainer: {
         flex: 1,
-        paddingBottom: 100
+        paddingBottom: '50%'
     },
     map: {
         flex: 1
