@@ -1,22 +1,18 @@
-/* React core and React Native components */
+// React core and React Native components
+import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-/* Third-Party libraries */
-import { SvgProps } from 'react-native-svg';
-
-/* Constants and configs */
+// Constants and Configurations
 import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
-type FilterChipProps = {
-    title?: string;
-    icon: React.FC<SvgProps>;
-};
+// Props and Types
+import { FilterChipProps } from '../../types';
 
-const FilterChip = ({ ...props }: FilterChipProps) => {
+const FilterChip: React.FC<FilterChipProps> = ({ ...props }) => {
     const IconComponent = props.icon;
     return (
         <TouchableOpacity style={styles.chipContainer}>
-            <IconComponent width={15} height={15} />
+            <IconComponent width={15} height={15} fill={'transparent'} />
             <Text style={styles.chipText}>{props.title}</Text>
         </TouchableOpacity>
     );

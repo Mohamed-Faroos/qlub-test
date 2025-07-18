@@ -31,7 +31,10 @@
     "react/display-name": "off",
     "react/react-in-jsx-scope": "off",
     "react-native/no-color-literals": "off",
-    "react-native/sort-styles": "off"
+    "react-native/sort-styles": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react-native/split-platform-components": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
   "settings": {
     "react": {

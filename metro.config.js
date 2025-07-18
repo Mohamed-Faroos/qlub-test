@@ -15,6 +15,7 @@ const config = {
     resolver: {
         assetExts: defaultConfig.resolver.assetExts.filter(ext => ext !== 'svg'),
         sourceExts: [...defaultConfig.resolver.sourceExts, 'svg'],
+        unstable_enablePackageExports: false
     },
 };
 

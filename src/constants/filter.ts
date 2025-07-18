@@ -1,18 +1,9 @@
-/* React core and React Native components */
-import React from 'react';
 
-/* Third-Party libraries */
-import { SvgProps } from 'react-native-svg';
-
-/* Custom UI components */
+// Custom UI components
 import { ChefHatIcon, CoffeeIcon, ForkIcon, GlassIcon } from '../assets/icons'; // Adjust the path as needed
 
-/* filter type */
-export type FilterType = {
-    id: string;
-    title: string;
-    icon: React.FC<SvgProps>;
-};
+// Props and Types
+import { FilterType } from '../types';
 
 export const restaurantFilter: FilterType[] = [
     {

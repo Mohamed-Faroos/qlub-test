@@ -7,18 +7,21 @@ import {
 } from 'react-native';
 
 // Constants and Configurations
-import { PRIMARY_COLOR } from '../../constants/colors';
+import { PRIMARY_COLOR, PRIMARY_LIGHT_COLOR } from '../../constants/colors';
 
 // Props and Types
-import { ButtonProps } from '../../types';
+import { IconButtonProps } from '../../types';
 
-const Button: React.FC<ButtonProps> = ({ ...props }) => {
+const IconButton: React.FC<IconButtonProps> = ({ ...props }) => {
+    const IconComponent = props.icon;
+
     return (
         <TouchableOpacity
             onPress={props.onPress}
             disabled={props.disabled}
             style={[styles.button, props.style]}
         >
+            <IconComponent width={20} height={20} />
             <Text style={[styles.buttonText, props.textStyle]}>
                 {props.title}
             </Text>
@@ -28,23 +31,27 @@ const Button: React.FC<ButtonProps> = ({ ...props }) => {
 
 const styles = StyleSheet.create({
     button: {
+        flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 10,
-        elevation: 5,
-        height: 60,
         justifyContent: 'center',
-        padding: 10,
+        backgroundColor: PRIMARY_LIGHT_COLOR,
+        borderRadius: 20,
+        height: 36,
+        width: 170,
+        paddingHorizontal: 10,
+        shadowColor: PRIMARY_COLOR,
         shadowOffset: { width: 3, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        width: '100%',
+        elevation: 5,
     },
     buttonText: {
         color: PRIMARY_COLOR,
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center'
+        fontSize: 12,
+        fontWeight: '600',
+        textAlign: 'center',
+        paddingLeft: 8
     }
 });
 
-export default Button;
+export default IconButton;

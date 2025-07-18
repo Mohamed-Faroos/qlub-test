@@ -1,23 +1,20 @@
-/* Third-party libraries */
-import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
+// Third-party libraries
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 
-/* Screens UI */
+// Screens UI
 import HomeScreen from '../screens/Home';
 import ExploreScreen from '../screens/Explore';
 
-/* Types */
-export type RootStackParamList = {
-    Home: undefined;
-    Explore: undefined;
-};
+// Props and Types
+import { RootNavigationProps, RootStackParamList } from '../types/navigation';
 
-export type RootNavigationProp = NativeStackNavigationProp<RootStackParamList>;
-
-/* creating stack navigation */
+// creating stack navigation
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-/* Root Navigation Component */
+/** 
+ * Root Navigation Component 
+ */
 export const RootNavigation = () => (
     <Stack.Navigator
         screenOptions={{
@@ -29,4 +26,4 @@ export const RootNavigation = () => (
     </Stack.Navigator>
 );
 
-export const useRootNavigation = () => useNavigation<RootNavigationProp>();
+export const useRootNavigation = () => useNavigation<RootNavigationProps>();

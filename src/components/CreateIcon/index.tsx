@@ -1,10 +1,11 @@
-/* React core and React Native components */
+// React core and React Native components
 import React from 'react';
 
-/* Third party libraries */
+// Third party libraries
 import { SvgProps } from 'react-native-svg';
 
-type SvgComponent = React.FC<SvgProps>;
+// props and types
+import { SvgComponent } from '../../types';
 
 const CreateIcon = (Component: SvgComponent): SvgComponent => {
   return ({ width = 24, height = 24, fill = 'transparent', ...rest }: SvgProps) => (

@@ -1,10 +1,10 @@
-/* React core and React Native components */
+// React core and React Native components
 import { StyleSheet, TextInput, View } from 'react-native';
 
-/* Custom UI components */
+// Custom UI components
 import { SearchIcon } from '../../assets/icons';
 
-/* Constants and configs */
+// Constants and configs
 import { GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
 const SearchInput = () => {

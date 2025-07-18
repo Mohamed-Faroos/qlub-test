@@ -1,23 +1,27 @@
-/* React core and React Native components */
+// React core and React Native components
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-/* Third-Party libraries */
+// Third-Party libraries
 import { Marker } from 'react-native-maps';
 
-/* Custom UI components */
+// Custom UI components
 import { PlaceMarkerIcon } from '../../assets/icons';
 
-/* Constants and configs */
+// Constants and Configurations
 import { PRIMARY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
-const PlaceMarker = () => {
+// Props and Types
+import { RestaurantsProps } from '../../types';
+
+const PlaceMarker: React.FC<RestaurantsProps> = ({ ...props }) => {
     return (
-        <Marker style={style.markerContainer} coordinate={{ latitude: 6.797790274300732, longitude: 79.89973831760824 }}>
+        <Marker style={style.markerContainer} coordinate={{ latitude: props.latitude, longitude: props.longitude }}>
             <View style={style.markerSubContainer}>
                 <PlaceMarkerIcon width={20} height={20} />
                 <View style={style.infoContainer}>
-                    <Text style={style.placeRating} >4.8</Text>
-                    <Text style={style.placeName}>Quattro Cafe</Text>
+                    <Text style={style.placeRating} >{props.rating ? props.rating.toFixed(1) : '0.0'}</Text>
+                    <Text style={style.placeName}>{props.name}</Text>
                 </View>
             </View>
             <View style={style.arrow} />

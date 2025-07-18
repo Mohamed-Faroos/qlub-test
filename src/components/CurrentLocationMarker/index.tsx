@@ -1,20 +1,26 @@
-/* React core and React Native components */
-import { useEffect, useRef } from 'react';
+// React core and React Native components
+import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, View } from 'react-native';
 
-/* Third-Party libraries */
+// Third-Party libraries
 import { Callout, MarkerAnimated } from 'react-native-maps';
 
-/* Custom UI components */
+// Custom UI components
 import { CurrentLocationIcon } from '../../assets/icons';
 
-/* Constants and configs */
+// Constants and Configurations
 import { PRIMARY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
-const CurrentLocationMarker = () => {
+// Props and types
+import { CurrentLocationMarkerProps } from '../../types';
+
+const CurrentLocationMarker: React.FC<CurrentLocationMarkerProps> = ({ ...props }) => {
+
     const opacityAnim = useRef(new Animated.Value(1)).current;
 
-    /* animate Current location marker */
+    /**
+     * animate Current location marker 
+    */
     useEffect(() => {
         const loop = Animated.loop(
             Animated.sequence([
@@ -37,7 +43,7 @@ const CurrentLocationMarker = () => {
     return (
         <MarkerAnimated
             style={{ opacity: opacityAnim }}
-            coordinate={{ latitude: 6.747790274300732, longitude: 79.89973831760824 }}
+            coordinate={{ latitude: props.latitude, longitude: props.longitude }}
         >
             {/* animated current location marker icon */}
             <Animated.View style={{ opacity: opacityAnim }}>

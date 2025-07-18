@@ -1,59 +1,25 @@
-import { View } from 'react-native';
-import MapView, { MapStyleElement } from 'react-native-maps';
+// React core and React Native components
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+
+// Third-party libraries
+import MapView from 'react-native-maps';
+
+// Custom UI components
 import CurrentLocationMarker from '../CurrentLocationMarker';
 import PlaceMarker from '../PlaceMarker';
 
-const Map = () => {
+// Constants and Configurations
+import { mapStyle } from '../../constants/mapStyle';
 
-    const mapStyle: MapStyleElement[] = [
-        {
-            featureType: 'all',
-            elementType: 'labels',
-            stylers: [{ visibility: 'off' }],
-        },
-        {
-            featureType: 'road',
-            elementType: 'geometry',
-            stylers: [{ visibility: 'on' }],
-        },
-        {
-            featureType: 'administrative.locality',
-            elementType: 'labels',
-            stylers: [{ visibility: 'off' }],
-        },
-        {
-            featureType: 'administrative.locality',
-            elementType: 'geometry',
-            stylers: [{ visibility: 'off' }],
-        },
-        {
-            featureType: 'poi',
-            elementType: 'all',
-            stylers: [{ visibility: 'off' }],
-        },
-        {
-            featureType: 'transit',
-            elementType: 'all',
-            stylers: [{ visibility: 'off' }],
-        },
-        {
-            featureType: 'landscape',
-            elementType: 'geometry',
-            stylers: [{ visibility: 'off' }],
-        },
-        {
-            featureType: 'water',
-            elementType: 'geometry',
-            stylers: [{ visibility: 'off' }],
-        },
-    ];
+// Props and Types
+import { MapProps, RestaurantsProps } from '../../types';
 
-    
-
+const Map: React.FC<MapProps> = ({ ...props }) => {
     return (
-        <View style={{ flex: 1, paddingBottom: 100 }}>
+        <View style={style.mapContainer}>
             <MapView
-                style={{ flex: 1 }}
+                style={style.map}
                 provider='google'
                 mapType='standard'
                 customMapStyle={mapStyle}
@@ -62,17 +28,38 @@ const Map = () => {
                 zoomTapEnabled={true}
 
                 initialRegion={{
-                    latitude: 6.747790274300732,
-                    longitude: 79.89973831760824,
-                    latitudeDelta: 0.2,
-                    longitudeDelta: 0.2,
+                    latitude: props.currentLocation.latitude,
+                    longitude: props.currentLocation.longitude,
+                    latitudeDelta: 0.009,
+                    longitudeDelta: 0.009,
                 }}
             >
-                <CurrentLocationMarker />
-                <PlaceMarker/>
+                {/* Render user current location marker */}
+                <CurrentLocationMarker
+                    latitude={props.currentLocation.latitude}
+                    longitude={props.currentLocation.longitude}
+                />
+
+                {/* Render near by restaurant locations */}
+                {
+                    props.restaurants
+                        .map((restaurant: RestaurantsProps, index: number) => (
+                            <PlaceMarker key={index} {...restaurant} />
+                        ))
+                }
             </MapView>
         </View>
     );
 };
+
+const style = StyleSheet.create({
+    mapContainer: {
+        flex: 1,
+        paddingBottom: 100
+    },
+    map: {
+        flex: 1
+    }
+});
 
 export default Map;

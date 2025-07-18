@@ -1,13 +1,36 @@
+// React core and React Native components
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
+
+// Third-party libraries
+import { useDispatch } from 'react-redux';
+
+// Custom UI components
+import Button from '../../components/Button';
+
+// Hooks
+import { useRootNavigation } from '../../navigation';
+
+// Constants & Configuration
 import { PRIMARY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
-import Button from '../../components/Button';
+// Redux action
+import { getRestaurantsClear } from '../../store/restaurants/getRestaurants';
+
+// Assets
 import HomeImage from '../../assets/images/home-image.svg';
-import { useRootNavigation } from '../../navigation';
+
+// Props and Types
+import { AppDispatch } from '../../store/store';
+
+
 
 const HomeScreen = () => {
     const navigation = useRootNavigation();
+    const dispatch = useDispatch<AppDispatch>();
 
+    // useEffect(() => {
+    //     dispatch(getRestaurantsClear());
+    // }, []);
     /* navigate to explore screen */
     const handleExplorePress = () => {
         navigation.navigate('Explore');

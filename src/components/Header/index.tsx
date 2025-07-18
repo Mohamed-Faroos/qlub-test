@@ -1,19 +1,26 @@
-/* React core and React Native components */
+// React core and React Native components
+import React from 'react';
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-/* Custom UI components */
+// Custom UI components
 import { BackIcon, LocationMarkerIcon } from '../../assets/icons';
 
-/* Constants and configs */
+// Constants and Configurations
 import { DARK_COLOR, GREY_COLOR, WHITE_COLOR } from '../../constants/colors';
 
-/* Custom Hooks */
+// Hooks
 import { useRootNavigation } from '../../navigation';
 
-const Header = () => {
+// props and Types
+import { HeaderProps } from '../../types';
+
+const Header: React.FC<HeaderProps> = ({ ...props }) => {
+
     const navigation = useRootNavigation();
 
-    /* navigate back to previous screen */
+    /** 
+     *  navigate back to previous screen 
+     */
     const handleBackPress = () => {
         navigation.goBack();
     };
@@ -30,15 +37,18 @@ const Header = () => {
             {/* location details */}
             <View style={styles.locationContainer}>
                 <View style={styles.iconContainer}>
-                    <LocationMarkerIcon width={20} height={20} />
+                    <LocationMarkerIcon width={20} height={20} fill={'transparent'} />
                 </View>
                 <View style={styles.locationTextContainer}>
                     <Text style={styles.locationTextTitle}>Offers Near</Text>
-                    <Text style={styles.locationTextAddress}>Keselwatha, Panadura, Sri Lanka
+                    <View style={styles.locationAddressContainer}>
+                        <Text style={styles.locationTextAddress} numberOfLines={1}>
+                            {props.locationAddress}
+                        </Text>
                         <View style={styles.dropdownIcon}>
                             <BackIcon width={14} height={14} />
                         </View>
-                    </Text>
+                    </View>
                 </View>
             </View>
         </View>
@@ -91,15 +101,19 @@ const styles = StyleSheet.create({
         fontSize: 12,
         fontWeight: 'bold',
     },
+    locationAddressContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center'
+    },
     locationTextAddress: {
         color: DARK_COLOR,
         fontSize: 12,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        maxWidth: 220
     },
     dropdownIcon: {
         transform: [{ rotate: '-90deg' }],
-        width: 20,
-        marginTop: 8,
+        width: 12,
         marginLeft: 10,
     }
 });
