@@ -110,8 +110,8 @@ const ExploreScreen = () => {
             mapRef?.current?.animateToRegion({
                 latitude: selectedRestaurant.latitude,
                 longitude: selectedRestaurant.longitude,
-                latitudeDelta: 0.009,
-                longitudeDelta: 0.009,
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.02,
             }, 200);
         }
     };

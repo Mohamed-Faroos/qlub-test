@@ -13,7 +13,7 @@ import { DARK_COLOR, GREY_COLOR, WHITE_COLOR, } from '../../constants/colors';
 import { RestaurantListModalProps, RestaurantsProps } from '../../types';
 
 const RestaurantListModal: React.FC<RestaurantListModalProps> = (props) => {
-    const snapPoints = useMemo(() => ['25%', '40%', '80%'], []);
+    const snapPoints = useMemo(() => ['25%', '40%', '50%', '80%'], []);
 
     const CustomHandle = () => (
         <View style={styles.handleContainer}>
