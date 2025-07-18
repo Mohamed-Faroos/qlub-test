@@ -43,9 +43,8 @@ const ExploreScreen = () => {
 
     // local state
     const [currentLocation, setCurrentLocation] = useState<GeoLocation>({
-        latitude: 6.8904559,
-        longitude: 79.8562609,
-        address: '88 Galle - Colombo Rd'
+        latitude: null,
+        longitude: null
     });
     const [selectedRestaurant, setSelectedRestaurant] = useState<number | null>(null);
 
@@ -102,6 +101,22 @@ const ExploreScreen = () => {
     };
 
     /**
+     * The function onMoveToSelectedLocation finds a selected restaurant from a list and animates the
+     * map to its location.
+     */
+    const onMoveToSelectedLocation = (selectedIndex: number) => {
+        const selectedRestaurant = stateRestaurants.find((_: any, index: number) => index === selectedIndex);
+        if (selectedRestaurant) {
+            mapRef?.current?.animateToRegion({
+                latitude: selectedRestaurant.latitude,
+                longitude: selectedRestaurant.longitude,
+                latitudeDelta: 0.009,
+                longitudeDelta: 0.009,
+            }, 200);
+        }
+    };
+
+    /**
      * The onSelectLocation function updates the selected restaurant index and scrolls to the
      * corresponding item in a list with a delay.
      */
@@ -109,11 +124,16 @@ const ExploreScreen = () => {
         setSelectedRestaurant(selectedIndex);
         if (selectedIndex !== null && selectedIndex >= 0 && listRef?.current) {
             modalRef?.current?.snapToIndex(1);
+
+            if (selectedIndex >= 0 && mapRef?.current) {
+                onMoveToSelectedLocation(selectedIndex);
+            }
+
             setTimeout(() => {
                 if (selectedIndex !== null) {
                     listRef?.current?.scrollToIndex({ index: selectedIndex, animated: true });
                 }
-            }, 300);
+            }, 200);
         }
     };
 
@@ -125,15 +145,7 @@ const ExploreScreen = () => {
         modalRef?.current?.snapToIndex(1);
         setSelectedRestaurant(selectedIndex);
         if (selectedIndex >= 0 && mapRef?.current) {
-            const selectedRestaurant = stateRestaurants.find((_: any, index: number) => index === selectedIndex);
-            if (selectedRestaurant) {
-                mapRef?.current?.animateToRegion({
-                    latitude: selectedRestaurant.latitude,
-                    longitude: selectedRestaurant.longitude,
-                    latitudeDelta: 0.009,
-                    longitudeDelta: 0.009,
-                }, 600);
-            }
+            onMoveToSelectedLocation(selectedIndex);
         }
     };
 
