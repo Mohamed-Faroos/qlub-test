@@ -64,7 +64,7 @@ npm istall
 
 ```
 
-### Build and run your app on IOS
+### Build and run app on IOS
 ```sh
 cd ios && pod install
 #or
@@ -73,7 +73,7 @@ npm pod install
 npm run ios
 ```
 
-### Build and run your app on IOS
+### Build and run app on IOS
 ```sh
 npm run android
 ```
