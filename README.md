@@ -25,7 +25,7 @@ This cross-platform mobile application (iOS & Android) is developed using React 
 
 <table>
   <tr>
-    <td><img src="https://drive.google.com/file/d/1fWBtHEWyAbwEmRyVUNwY9wIHBym5PWLf/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/file/d/1fWBtHEWyAbwEmRyVUNwY9wIHBym5PWLf/view" width="100" /></td>
     <td><img src="https://drive.google.com/file/d/1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn/view?usp=drive_link" width="100" /></td>
     <td><img src="https://drive.google.com/file/d/1O48eYutgcnk2j-8UJuxrv-NTAUmTKyHF/view?usp=drive_link" width="100" /></td>
   </tr>
@@ -43,7 +43,7 @@ This cross-platform mobile application (iOS & Android) is developed using React 
 
 ### Demo Video
 
-[![Watch the video](https://drive.google.com/file/d/1ZIMpSsxiA6xN7ur2oF4x7mpV0QJTggb-/view?usp=drive_link)](https://drive.google.com/file/d/1-bqsPfX_fE4QwrEX2uhCbblqe--5AiOU/view?usp=sharing)
+[![Watch the video](https://drive.google.com/file/d/1ZIMpSsxiA6xN7ur2oF4x7mpV0QJTggb-/view)](https://drive.google.com/file/d/1-bqsPfX_fE4QwrEX2uhCbblqe--5AiOU/view)
 
 ##  App Setup
 
