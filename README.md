@@ -11,11 +11,11 @@ This cross-platform mobile application (iOS & Android) is developed using React 
 - Only restaurants with a rating above 3.5 are shown.
 - Uses Google Maps SDK to render interactive markers on the map.
 
-### Bottom Sheet List View
+### 📋 Bottom Sheet List View
 - All restaurants are listed in a BottomSheetModal.
 - List is sorted by distance or rating, improving discoverability.
 
-### Synchronized Selection
+### 🔁 Synchronized Selection
 - Tap a restaurant on the map → Automatically scrolls to the corresponding item in the list.
 - Select a restaurant from the list → Smoothly navigates and centers the map to that location.
 
