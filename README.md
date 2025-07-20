@@ -22,15 +22,12 @@ This cross-platform mobile application (iOS & Android) is developed using React 
 ## Screen Shots and Demo Video
 
 ### IOS Screen Shots 
-![image1](https://drive.google.com/file/d/1fWBtHEWyAbwEmRyVUNwY9wIHBym5PWLf/view)
-![image2](https://drive.google.com/file/d/1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn/view)
-![image3](https://drive.google.com/file/d/1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn/view)
 
 <table>
   <tr>
-    <td>  </td>
-    <td><img src="https://drive.google.com/file/d/1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn/view?usp=drive_link" width="100" /></td>
-    <td><img src="https://drive.google.com/file/d/1O48eYutgcnk2j-8UJuxrv-NTAUmTKyHF/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/uc?export=view&id=1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn" width="100" /></td>
+    <td><img src="https://drive.google.com/uc?export=view&id=1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn" width="100" /></td>
+    <td><img src="https://drive.google.com/uc?export=view&id=1O48eYutgcnk2j-8UJuxrv-NTAUmTKyHF" width="100" /></td>
   </tr>
 </table>
 
@@ -38,15 +35,15 @@ This cross-platform mobile application (iOS & Android) is developed using React 
 
 <table>
   <tr>
-    <td><img src="https://drive.google.com/file/d/13L835jhtsEqdbL2uNSaAYuUHdM8ETFR7/view?usp=drive_link" width="100" /></td>
-    <td><img src="https://drive.google.com/file/d/1PMLb4rcXN7jQtDDU51hxSPxqNIEnrk0G/view?usp=drive_link" width="100" /></td>
-    <td><img src="https://drive.google.com/file/d/1Hj5XTUr1P-ZBmAcKAbo1ZhyxjySuWm93/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/uc?export=view&id=13L835jhtsEqdbL2uNSaAYuUHdM8ETFR7" width="100" /></td>
+    <td><img src="https://drive.google.com/uc?export=view&id=1PMLb4rcXN7jQtDDU51hxSPxqNIEnrk0G" width="100" /></td>
+    <td><img src="https://drive.google.com/uc?export=view&id=1Hj5XTUr1P-ZBmAcKAbo1ZhyxjySuWm93" width="100" /></td>
   </tr>
 </table>
 
 ### Demo Video
 
-[![Watch the video](https://drive.google.com/file/d/1ZIMpSsxiA6xN7ur2oF4x7mpV0QJTggb-/view)](https://drive.google.com/file/d/1-bqsPfX_fE4QwrEX2uhCbblqe--5AiOU/view)
+[![Watch the video](https://drive.google.com/uc?export=view&id=1ZIMpSsxiA6xN7ur2oF4x7mpV0QJTggb)](https://drive.google.com/file/d/1-bqsPfX_fE4QwrEX2uhCbblqe--5AiOU/view)
 
 ##  App Setup
 
