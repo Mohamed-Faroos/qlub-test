@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 3, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5,
+        elevation: 1,
     },
     buttonText: {
         color: PRIMARY_COLOR,

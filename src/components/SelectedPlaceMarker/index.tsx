@@ -14,7 +14,7 @@ import { PRIMARY_COLOR, WHITE_COLOR } from '../../constants/colors';
 // Props and Types
 import { PlaceMarkerProps } from '../../types';
 
-const PlaceMarker: React.FC<PlaceMarkerProps> = (props) => {
+const SelectedPlaceMarker: React.FC<PlaceMarkerProps> = (props) => {
     return (
         <Marker
             id={props.id.toString()}
@@ -49,7 +49,7 @@ const style = StyleSheet.create({
     markerContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        zIndex: 1
+        zIndex: 999
     },
     markerButton: {
         height: 48,
@@ -70,7 +70,7 @@ const style = StyleSheet.create({
         paddingHorizontal: 5,
         borderRadius: 40,
         borderWidth: 2,
-        borderColor: WHITE_COLOR
+        borderColor: PRIMARY_COLOR
     },
     infoContainer: {
         paddingHorizontal: 6
@@ -87,7 +87,6 @@ const style = StyleSheet.create({
     arrow: {
         width: 2,
         height: 2,
-        borderTopColor: WHITE_COLOR,
         borderLeftWidth: 6,
         borderRightWidth: 6,
         borderTopWidth: 8,
@@ -96,7 +95,8 @@ const style = StyleSheet.create({
         position: 'absolute',
         left: '50%',
         bottom: -8,
+        borderTopColor: PRIMARY_COLOR
     }
 });
 
-export default PlaceMarker;
+export default SelectedPlaceMarker;

@@ -47,7 +47,6 @@ export interface RestaurantsProps {
 export interface PlaceMarkerProps {
     id: number,
     restaurant: RestaurantsProps,
-    isSelected: boolean
     onSelectLocation(index: number): void
 }
 

@@ -8,6 +8,7 @@ import MapView from 'react-native-maps';
 // Custom UI components
 import CurrentLocationMarker from '../CurrentLocationMarker';
 import PlaceMarker from '../PlaceMarker';
+import SelectedPlaceMarker from '../SelectedPlaceMarker';
 
 // Constants and Configurations
 import { mapStyle } from '../../constants/mapStyle';
@@ -24,10 +25,9 @@ const Map: React.FC<MapProps> = (props) => {
                 provider='google'
                 mapType='standard'
                 customMapStyle={mapStyle}
-                zoomControlEnabled={true}
-                zoomEnabled={true}
+                zoomControlEnabled={false}
+                zoomEnabled={false}
                 zoomTapEnabled={true}
-
                 initialRegion={{
                     latitude: props.currentLocation.latitude,
                     longitude: props.currentLocation.longitude,
@@ -44,15 +44,26 @@ const Map: React.FC<MapProps> = (props) => {
                 {/* Render near by restaurant locations */}
                 {
                     props.restaurants
-                        .map((restaurant: RestaurantsProps, index: number) => (
-                            <PlaceMarker
-                                key={index}
-                                id={index}
-                                restaurant={restaurant}
-                                isSelected={props.selectedLocation === index}
-                                onSelectLocation={props.onSelectLocation}
-                            />
-                        ))
+                        .map((restaurant: RestaurantsProps, index: number) => {
+                            /** 
+                             * created two separated Marker for Place and selected place,
+                             * because Dynamic style rendering is not working in side the marker for Android
+                             */
+                            if (props.selectedLocation === index)
+                                return <SelectedPlaceMarker
+                                    key={index}
+                                    id={index}
+                                    restaurant={restaurant}
+                                    onSelectLocation={props.onSelectLocation}
+                                />;
+                            else
+                                return <PlaceMarker
+                                    key={index}
+                                    id={index}
+                                    restaurant={restaurant}
+                                    onSelectLocation={props.onSelectLocation}
+                                />;
+                        })
                 }
             </MapView>
         </View>

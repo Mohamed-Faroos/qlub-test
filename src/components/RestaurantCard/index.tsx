@@ -1,6 +1,6 @@
 // React core and React Native components
 import React from 'react';
-import { Image, View, StyleSheet, Alert, TouchableOpacity } from 'react-native';
+import { Image, View, StyleSheet, Alert, TouchableOpacity, Platform } from 'react-native';
 
 // Third-Party libraries
 import { Text } from 'react-native-gesture-handler';
@@ -10,7 +10,7 @@ import IconButton from '../IconButton/Index';
 import { DirectionIcon, MenuIcon, StarIcon } from '../../assets/icons';
 
 // Constants and configs
-import { GREY_COLOR, PRIMARY_COLOR, PRIMARY_LIGHT_COLOR, WHITE_COLOR } from '../../constants/colors';
+import { DARK_COLOR, GREY_COLOR, PRIMARY_COLOR, PRIMARY_LIGHT_COLOR, WHITE_COLOR } from '../../constants/colors';
 import { DeviceWidth } from '../../utils';
 
 // Props and Types
@@ -28,47 +28,54 @@ const RestaurantCard: React.FC<RestaurantCarsProps> = (props) => {
     };
 
     return (
-        <TouchableOpacity
-            style={props.isSelected ? style.selectedCardContainer : style.cardContainer}
-            onPress={onSelectLocation}
-        >
-            <Image
-                source={{
-                    uri: props.restaurant.imageUrl ?
-                        props.restaurant.imageUrl :
-                        placeHolderImage
-                }}
-                style={style.cardImage}
-                height={150}
-                width={DeviceWidth - 44}
-            />
-            <View style={style.infoContainer}>
-                <Text style={style.name}>{props.restaurant.name}</Text>
-                <Text style={style.discount}>{'Discount upto 30%'}</Text>
-            </View>
-            <View style={style.rateContainer}>
-                <StarIcon width={15} height={15} />
-                <Text>
-                    {props.restaurant.rating.toFixed(1)}
-                </Text>
-                <Text style={style.address} >
-                    {`|  ${props.restaurant.address}`}
-                </Text>
-            </View>
-            <View style={style.actionContainer}>
-                <IconButton
-                    title='Direction'
-                    onPress={() => Alert.alert('Feature under construction!')}
-                    icon={DirectionIcon}
+        <TouchableOpacity onPress={onSelectLocation} style={{ backgroundColor: WHITE_COLOR }}>
+            <View style={{
+                ...style.cardContainer,
+                ...(props.isSelected ?
+                    { backgroundColor: PRIMARY_LIGHT_COLOR } :
+                    { backgroundColor: WHITE_COLOR })
+            }}>
+                <Image
+                    source={{
+                        uri: props.restaurant.imageUrl ?
+                            props.restaurant.imageUrl :
+                            placeHolderImage
+                    }}
+                    style={style.cardImage}
+                    height={150}
+                    width={DeviceWidth - 44}
                 />
-                <IconButton
-                    title='Menu'
-                    onPress={() => Alert.alert('Feature under construction!')}
-                    icon={MenuIcon}
-                    style={style.menuButton}
-                    textStyle={style.menuButtonText}
-                />
+                <View style={style.infoContainer}>
+                    <Text style={style.name}>{props.restaurant.name}</Text>
+                    <Text style={style.discount}>{'Discount upto 30%'}</Text>
+                </View>
+                <View style={style.rateContainer}>
+                    <StarIcon width={15} height={15} />
+                    <Text>
+                        {props.restaurant.rating.toFixed(1)}
+                    </Text>
+                    <Text style={style.address} >
+                        {`|  ${props.restaurant.address}`}
+                    </Text>
+                </View>
+                <View style={style.actionContainer}>
+                    <IconButton
+                        title='Direction'
+                        onPress={() => Alert.alert('Feature under construction!')}
+                        icon={DirectionIcon}
+                    />
+                    <IconButton
+                        title='Menu'
+                        onPress={() => Alert.alert('Feature under construction!')}
+                        icon={MenuIcon}
+                        style={style.menuButton}
+                        textStyle={style.menuButtonText}
+                    />
+                </View>
             </View>
+            {/* bottom shadow to android UI */}
+            {Platform.OS === 'android' &&
+                <View style={style.androidShadow} />}
         </TouchableOpacity>
     );
 };
@@ -76,21 +83,11 @@ const RestaurantCard: React.FC<RestaurantCarsProps> = (props) => {
 const style = StyleSheet.create({
     cardContainer: {
         padding: 22,
-        marginBottom: 10,
+        marginBottom: Platform.OS === 'android' ? 0 : 10,
         shadowColor: PRIMARY_COLOR,
         shadowOffset: { width: 0, height: 5 },
         shadowOpacity: 0.2,
         shadowRadius: 3,
-        backgroundColor: WHITE_COLOR
-    },
-    selectedCardContainer: {
-        padding: 22,
-        marginBottom: 10,
-        shadowColor: PRIMARY_COLOR,
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.2,
-        shadowRadius: 3,
-        backgroundColor: PRIMARY_LIGHT_COLOR
     },
     cardImage: {
         borderRadius: 10
@@ -140,7 +137,15 @@ const style = StyleSheet.create({
     },
     menuButtonText: {
         color: WHITE_COLOR
-    }
+    },
+    androidShadow: {
+        height: 1,
+        marginBottom: 10,
+        width: '100%',
+        backgroundColor: 'transparent',
+        shadowColor: DARK_COLOR,
+        elevation: 20,
+    },
 });
 
 export default RestaurantCard;

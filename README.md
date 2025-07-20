@@ -1,97 +1,125 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🍽️ Nearby Restaurants Finder – React Native App (Qlub Test)
 
-# Getting Started
+This cross-platform mobile application (iOS & Android) is developed using React Native and integrates Google Maps SDK and Google Places API to display a list of nearby restaurants with a smooth map and list interaction experience.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## ✨ Key Features
+### 📍 Real-time User Location
+- Automatically detects and shows the user's current location on the map.
 
-## Step 1: Start Metro
+### 🗺️ Map with Nearby Restaurants
+- Displays all nearby restaurants within a 5 km radius.
+- Only restaurants with a rating above 3.5 are shown.
+- Uses Google Maps SDK to render interactive markers on the map.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+### Bottom Sheet List View
+- All restaurants are listed in a BottomSheetModal.
+- List is sorted by distance or rating, improving discoverability.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### Synchronized Selection
+- Tap a restaurant on the map → Automatically scrolls to the corresponding item in the list.
+- Select a restaurant from the list → Smoothly navigates and centers the map to that location.
 
+## Screen Shots and Demo Video
+
+### IOS Screen Shots 
+
+<table>
+  <tr>
+    <td><img src="https://drive.google.com/file/d/1fWBtHEWyAbwEmRyVUNwY9wIHBym5PWLf/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/file/d/1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/file/d/1O48eYutgcnk2j-8UJuxrv-NTAUmTKyHF/view?usp=drive_link" width="100" /></td>
+  </tr>
+</table>
+
+### Android Screen Shots
+
+<table>
+  <tr>
+    <td><img src="https://drive.google.com/file/d/13L835jhtsEqdbL2uNSaAYuUHdM8ETFR7/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/file/d/1PMLb4rcXN7jQtDDU51hxSPxqNIEnrk0G/view?usp=drive_link" width="100" /></td>
+    <td><img src="https://drive.google.com/file/d/1Hj5XTUr1P-ZBmAcKAbo1ZhyxjySuWm93/view?usp=drive_link" width="100" /></td>
+  </tr>
+</table>
+
+### Demo Video
+
+[![Watch the video](https://drive.google.com/file/d/1ZIMpSsxiA6xN7ur2oF4x7mpV0QJTggb-/view?usp=drive_link)](https://drive.google.com/file/d/1-bqsPfX_fE4QwrEX2uhCbblqe--5AiOU/view?usp=sharing)
+
+##  App Setup
+
+### clone project
 ```sh
-# Using npm
-npm start
+git clone https://github.com/Mohamed-Faroos/qlub-test.git
 
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+### .env file setup
+- rename .env.example -> .env  
+- add GOOGLE_API_KEY
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
+### install node modules
 ```sh
-# Using npm
-npm run android
+cd qlub-test
+npm istall
 
-# OR using Yarn
-yarn android
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
+### Build and run your app on IOS
 ```sh
-bundle install
-```
+cd ios && pod install
+#or
+npm pod install
 
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Build and run your app on IOS
+```sh
+npm run android
+```
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+# Libraries
 
-## Step 3: Modify your app
+## 📍 Maps & Location
+Used for displaying maps, getting user location, and geocoding:
 
-Now that you have successfully run the app, let's make changes!
+- react-native-maps – Render Google Maps.
+- @react-native-community/geolocation – Access device geolocation (deprecated, consider using expo-location or native modules).
+- react-native-geocoding – Convert lat/lng to addresses and vice versa.
+- react-native-config – Manage Google API keys via .env
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 🧭 Navigation
+Used for screen-to-screen transitions and navigation stacks:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+- @react-navigation/native – Core navigation library.
+- @react-navigation/native-stack – Native stack navigator for improved performance.
+- react-native-safe-area-context – Handle notches and safe areas.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🧾 UI & Interaction
+Used for bottom sheet modals and gesture handling:
 
-## Congratulations! :tada:
+- @gorhom/bottom-sheet – BottomSheetModal to display the restaurant list.
+- react-native-gesture-handler – Handles gestures (required by bottom-sheet and navigation).
+- react-native-reanimated – Animations for gestures and BottomSheet.
+- react-native-svg – Supports rendering SVG images.
+- react-native-svg-transformer – Enables importing .svg files as React components.
 
-You've successfully run and modified your React Native App. :partying_face:
+## 🌐 Network & API
+Used for making HTTP requests:
 
-### Now what?
+- axios – For calling the Google Places API and handling responses.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 🧠 State Management
+Used to manage and persist app state:
 
-# Troubleshooting
+- redux – Global state container.
+- react-redux – Connect Redux to React components.
+- redux-saga – Manage side effects like API calls.
+- redux-persist – Persist Redux state across app restarts.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## ⚙️ System & Utilities
+Used for core app structure or utilities:
 
-# Learn More
+- @react-native-async-storage/async-storage – Local storage used by Redux Persist.
 
-To learn more about React Native, take a look at the following resources:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

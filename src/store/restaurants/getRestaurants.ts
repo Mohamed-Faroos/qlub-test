@@ -46,7 +46,7 @@ export function* getRestaurantsSaga(action: GetRestaurantsAction): Generator {
         const response = yield call(getNearByRestaurants, action.payload);
         if (response.status === 200) {
             /** 
-             * map and arrange needed restaurant detail
+             * Mapping and arrange needed restaurant detail and filtering with rating above 3.5
             */
             const mappedResult: RestaurantSuccessResponse[] = response.data?.results?.
                 filter((place: any) => place?.rating > 3.5).

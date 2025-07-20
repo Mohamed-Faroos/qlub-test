@@ -43,8 +43,9 @@ const ExploreScreen = () => {
 
     // local state
     const [currentLocation, setCurrentLocation] = useState<GeoLocation>({
-        latitude: null,
-        longitude: null
+        latitude: 6.8904559,
+        longitude: 79.8562609,
+        address: '88 Galle - Colombo Rd'
     });
     const [selectedRestaurant, setSelectedRestaurant] = useState<number | null>(null);
 
