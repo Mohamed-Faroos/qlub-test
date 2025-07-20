@@ -25,7 +25,7 @@ This cross-platform mobile application (iOS & Android) is developed using React 
 
 <table>
   <tr>
-    <td> ![1](https://drive.google.com/file/d/1fWBtHEWyAbwEmRyVUNwY9wIHBym5PWLf/view </td>
+    <td> ![1](https://drive.google.com/file/d/1fWBtHEWyAbwEmRyVUNwY9wIHBym5PWLf/view) </td>
     <td><img src="https://drive.google.com/file/d/1fhAxO_QG7CJJg83xE3pKe3MRViSLIDWn/view?usp=drive_link" width="100" /></td>
     <td><img src="https://drive.google.com/file/d/1O48eYutgcnk2j-8UJuxrv-NTAUmTKyHF/view?usp=drive_link" width="100" /></td>
   </tr>
