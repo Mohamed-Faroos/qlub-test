@@ -57,6 +57,16 @@ git clone https://github.com/Mohamed-Faroos/qlub-test.git
 - rename .env.example -> .env  
 - add GOOGLE_API_KEY
 
+### Google API Key 🔑
+
+This project requires a valid **Google API Key** to work with Google services (e.g., Maps, Places API, etc.).
+
+> **Note:** For security reasons, the key is not included in the repository.
+
+📩 **To request a key, please email:** [faroos1996@gmail.com](mailto:faroos1996@gmail.com)
+
+Once received, add it to your environment file as: GOOGLE_API_KEY
+
 ### install node modules
 ```sh
 cd qlub-test
