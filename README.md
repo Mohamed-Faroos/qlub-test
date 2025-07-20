@@ -60,7 +60,7 @@ git clone https://github.com/Mohamed-Faroos/qlub-test.git
 ### install node modules
 ```sh
 cd qlub-test
-npm istall
+npm install
 
 ```
 
@@ -73,7 +73,7 @@ npm pod install
 npm run ios
 ```
 
-### Build and run app on IOS
+### Build and run app on Android
 ```sh
 npm run android
 ```
