@@ -95,7 +95,7 @@ Used for displaying maps, getting user location, and geocoding:
 
 - react-native-maps – Render Google Maps.
 - @react-native-community/geolocation – Access device geolocation.
-- react-native-geocoding – Convert lat/lng to addresses and vice versa.
+- react-native-geocoding – Convert lat/lng to addresses.
 - react-native-config – Manage Google API keys via .env
 
 ## 🧭 Navigation
