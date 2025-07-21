@@ -78,7 +78,7 @@ npm install
 ```sh
 cd ios && pod install
 #or
-npm pod install
+npx pod-install
 
 npm run ios
 ```
