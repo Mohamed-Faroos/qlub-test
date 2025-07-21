@@ -94,7 +94,7 @@ npm run android
 Used for displaying maps, getting user location, and geocoding:
 
 - react-native-maps – Render Google Maps.
-- @react-native-community/geolocation – Access device geolocation (deprecated, consider using expo-location or native modules).
+- @react-native-community/geolocation – Access device geolocation.
 - react-native-geocoding – Convert lat/lng to addresses and vice versa.
 - react-native-config – Manage Google API keys via .env
 
@@ -109,7 +109,7 @@ Used for screen-to-screen transitions and navigation stacks:
 Used for bottom sheet modals and gesture handling:
 
 - @gorhom/bottom-sheet – BottomSheetModal to display the restaurant list.
-- react-native-gesture-handler – Handles gestures (required by bottom-sheet and navigation).
+- react-native-gesture-handler – Handles gestures.
 - react-native-reanimated – Animations for gestures and BottomSheet.
 - react-native-svg – Supports rendering SVG images.
 - react-native-svg-transformer – Enables importing .svg files as React components.
